@@ -373,6 +373,7 @@ display: flex;
   */
 
 .team-title {
+  display: block;
   margin-bottom: 50px;
   font-weight: 700;
   font-size: 36px;
@@ -419,6 +420,7 @@ display: flex;
 }
 
 .site-logo-foot {
+  display: block;
   margin-bottom: 20px;
   font-family: 'Raleway',sans-serif;
   font-weight: 700;
@@ -475,6 +477,11 @@ display: flex;
   color: var(--title-text-color);
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     
+}
+
+.filter-btn {
+  display: flex;
+  justify-items: center;
 }
 
 .filter:hover,
