@@ -3,6 +3,8 @@
     --title-text-color: #212121;
     --accent-color: #18a0fb;
     --accent-second-color: #ffffff;
+    --portfolio-background-color: #F5F5F5;
+    --gallery-gap: 30px;
 
 }
 
@@ -62,9 +64,10 @@ body {
 
 .container {
   width: 1200px;
-  padding: 0.15px;
+  padding-left: 15px;
+  padding-right: 15px;
   margin: auto;
-  outline: 2px solid blueviolet;
+  /*outline: 2px solid blueviolet;*/
 }
 
 .visually-hidden {
@@ -92,6 +95,9 @@ body {
   background-color: #FFFFFF;
   padding-top: 24px;
   padding-bottom: 25px;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ECECEC;;
 }
 
 .site-logo {
@@ -215,7 +221,6 @@ body {
 
 .hero-button {
   display: inline-block;
-  margin: 0 auto;
   font-family: inherit;
   border: 1px solid transparent;
   border-radius: 4px;
@@ -248,23 +253,11 @@ body {
 
 .advant-descr {
 max-width: 270px;
-
 /*background-color: aliceblue;*/
 } 
 
-
-
-.advant-list > .advant-descr:nth-child(4n) {
-  margin-right: 0;
-}
-
 .advant-list > .advant-descr:nth-child(4n) {
 flex-direction: row-reverse; 
-}
-
-.advantages{
-  padding-top: 94px;
-  padding-bottom: 94px;
 }
 
 .advant-title {
@@ -301,25 +294,20 @@ flex-direction: row-reverse;
   align-items: center;    
 }
 
-
 .serv-type {
 display: flex;
-}
-
-.serv-element {
-  margin-right: 30px;
-}
-
-.serv-element:last-child { margin-right: 0 }
-
-.serv-type > .serv-element:nth-child(3n) {
-  margin-right: 0;
+column-gap: 30px;
 }
 
 /*------------------------------------------TEAM---------------------------------------*/
 
 .team {
   background-color: #F5F4FA;
+}
+
+.team-lst {
+  display: flex;
+  column-gap: 30px;
 }
 
 
@@ -330,8 +318,7 @@ display: flex;
   padding: 20px 24px;
   background-color: #F5F4FA;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
-  border-radius: 0px 0px 4px 4px;
-  margin-right: 30px;  
+  border-radius: 0px 0px 4px 4px; 
 }
 
 /*
@@ -386,14 +373,6 @@ display: flex;
   margin-bottom: 30px;
 }
 
-.team-lst {
-  display: flex;
-}
-
-.team-lst > .team-wrap:nth-child(4n) {
-  margin-right: 0;
-}
-
 /*--------------------------------------CONTACT-FOOTER--------------------------------------*/
 
 .contact-footer {
@@ -440,6 +419,10 @@ display: flex;
   color: rgba(255, 255, 255, 0.6);
 }
 
+.contact-address-tel:last-child {
+  margin-bottom: 0;
+}
+
 /*-----------------------PORTFOLIO--------------------------*/
 
 .filter {
@@ -464,12 +447,13 @@ display: flex;
 
 .btn {
   display: flex;
-  margin-right: 8px;
+  
  
 }
 
 .filter-btn {
   display: flex;
+  column-gap: 8px;
   justify-content: center;
   
 }
@@ -477,7 +461,7 @@ display: flex;
 .filter:hover,
 .filter:focus {
 color:#ffffff;
-background: var(--accent-color);
+background: var(--portfolio-background-color);
 }
 
 /*-----------------GALLERY-------------*/
@@ -487,20 +471,27 @@ background: var(--accent-color);
   height: 110px;
   border: 1px solid #EEEEEE;
   padding: 20px 24px;
-  
 }
+
+/*
+.card-thumb {  
+  outline: 1px solid tomato;  
+}*/
 
 .gallery {
   display: flex;
   flex-wrap: wrap;
   
+  margin-left: calc(-1 * var(--gallery-gap));
+  margin-bottom: calc(-1 * var(--gallery-gap));
+  
 }
 
-.gallery-proj {
-  margin-right: 30px;
-  margin-bottom: 30px;
-  flex-grow: 1.5;
-}
+/*
+.gallery-proj * {
+ outline: 1px solid tomato;  
+}*/
+
 
 .gallery-title {
 
@@ -519,22 +510,13 @@ background: var(--accent-color);
 }
 
 
-.gallery-proj > .gallery-wrap {
-  flex-basis: calc(100% / 3);
+.gallery > .gallery-proj {
+  flex-basis: calc(100% / 3 - 30px);
+
+  margin-left: var(--gallery-gap);
+  margin-bottom: var(--gallery-gap);
 }
 
 
-.gallery-proj:last-child { 
-  margin-right: 0; 
-}
-
-.gallery > .gallery-proj:nth-child(3n+3) {
-  margin-right: 0;
-
-}
-
-.gallery > .gallery-proj:nth-child(3n+3) {
-flex-direction: row; 
-}
 
     
